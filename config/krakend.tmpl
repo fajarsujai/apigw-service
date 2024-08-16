@@ -1,0 +1,8 @@
+{
+    "version": 3,
+    "name": "Krakend Api Gateway",
+    "cache_ttl": "3600s",
+    "timeout": "45s",
+    "extra_config": {},
+    "endpoints": [{{ template "Endpoint" .service }}]
+}

@@ -1,0 +1,9 @@
+{{define "Endpoint"}}
+
+{{$service := .}}
+
+{{ template "Service1ApiEndpoint" $service.service1 }},
+{{ template "Service2ApiEndpoint" $service.service2 }},
+{{ template "Service3ApiEndpoint" $service.service3 }}
+
+{{end}}

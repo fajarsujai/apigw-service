@@ -1,0 +1,22 @@
+{{define "Service3ApiEndpoint"}}
+
+{{$host := .}}
+
+{
+    "endpoint": "/v1/service3",
+    "method": "GET",
+    "output_encoding": "no-op",
+    "extra_config": {},
+    "backend": [
+        {
+            "url_pattern": "/service3",
+            "encoding": "no-op",
+            "sd": "static",
+            "method": "GET",
+            "extra_config": {},
+            "host": ["{{ $host }}"],
+            "disable_host_sanitize": true
+        }
+    ]
+}
+{{end}}
