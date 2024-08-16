@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  service1:
+    image: fajarsujai/service1:v1
+    container_name: service1-ct
+    ports:
+      - "3001:3001"
+    restart: unless-stopped
+    networks:
+      - service-be-network
+
+  service2:
+    image: fajarsujai/service2:v1
+    container_name: service2-ct
+    ports:
+      - "3002:3002"
+    restart: unless-stopped
+    networks:
+      - service-be-network
+
+  service3:
+    image: fajarsujai/service3:v1
+    container_name: service3-ct
+    ports:
+      - "3003:3003"
+    restart: unless-stopped
+    networks:
+      - service-be-network
+
+
+  apigateway:
+    image: simplekrakend:v11
+    container_name: apigateway-ct
+    ports:
+      - "8081:8080"
+    restart: unless-stopped
+    networks:
+      - service-be-network
+
+networks:
+  service-be-network:
+    external: true
