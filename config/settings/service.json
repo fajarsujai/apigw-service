@@ -1,5 +1,5 @@
 {
     "service1": "service1:3001",
-    "service2": "http://service2:3002",
-    "service3": "http://localhost:3003"
+    "service2": "service2:3002",
+    "service3": "service3:3003"
 }
