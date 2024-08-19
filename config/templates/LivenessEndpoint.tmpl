@@ -1,0 +1,28 @@
+{{define "LivenessEndpoint"}}
+
+{{$host := .}}
+
+{ 
+    "endpoint": "/health",
+    "extra_config": {
+        "proxy": {
+            "static": {
+            "data": {
+                "custom": "response",
+                "foo": "bar"
+            },
+            "strategy": "always"
+            }
+        }
+    },
+    "backend": [
+    {
+        "url_pattern": "/__health",
+        "host": [
+            "http://localhost:8080"
+        ]
+    }
+    ]
+}
+{{end}}
+
